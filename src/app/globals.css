@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-secondary-text: var(--secondary-text);
+  --color-card: var(--card-bg);
+  --color-border-color: var(--border-color);
+
+  --font-display: var(--font-instrument);
+  --font-body: var(--font-plus-jakarta);
+}
+
+:root {
+  --background: #F5F0E8;
+  --foreground: #1A1A1A;
+  --accent: #7C9A7E;
+  --secondary-text: #6B6B6B;
+  --card-bg: #FFFFFF;
+  --border-color: rgba(124, 154, 126, 0.2);
+}
+
+.dark {
+  --background: #0F1512;
+  --foreground: #F0EDE4;
+  --accent: #7C9A7E;
+  --secondary-text: #9A9A8A;
+  --card-bg: #1A2420;
+  --border-color: rgba(124, 154, 126, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  transition-property: background-color, color, border-color;
+  transition-duration: 300ms;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--accent) 80%, black);
+}
+
+.mesh-bg {
+  background-image: 
+    radial-gradient(at 40% 20%, color-mix(in srgb, var(--accent) 15%, transparent) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, color-mix(in srgb, var(--foreground) 5%, transparent) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, color-mix(in srgb, var(--accent) 10%, transparent) 0px, transparent 50%);
+  animation: mesh-anim 10s ease-in-out infinite alternate;
+}
+
+@keyframes mesh-anim {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
