@@ -7,8 +7,8 @@ import { ArrowDown } from "lucide-react";
 const ROLES = [
   "Full Stack Developer",
   "React Specialist",
-  "Node.js Engineer",
-  "UI/UX Enthusiast"
+  "Next JS Expert",
+  "Finest Backend",
 ];
 
 export default function Hero() {
@@ -19,7 +19,7 @@ export default function Hero() {
   useEffect(() => {
     const typeSpeed = isDeleting ? 50 : 100;
     const currentRole = ROLES[roleIndex];
-    
+
     const timeout = setTimeout(() => {
       if (!isDeleting && currentText === currentRole) {
         setTimeout(() => setIsDeleting(true), 1500);
@@ -28,7 +28,7 @@ export default function Hero() {
         setRoleIndex((prev) => (prev + 1) % ROLES.length);
       } else {
         setCurrentText(
-          currentRole.substring(0, currentText.length + (isDeleting ? -1 : 1))
+          currentRole.substring(0, currentText.length + (isDeleting ? -1 : 1)),
         );
       }
     }, typeSpeed);
@@ -36,7 +36,7 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [currentText, isDeleting, roleIndex]);
 
-  const name = "Your Name";
+  const name = "SHIHAB";
   const nameVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -49,13 +49,19 @@ export default function Hero() {
 
   const letterVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden mesh-bg pt-20">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden mesh-bg pt-20"
+    >
       <div className="container mx-auto px-6 md:px-12 flex flex-col items-center text-center z-10">
-        
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -66,7 +72,9 @@ export default function Hero() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
           </span>
-          <span className="text-sm font-semibold text-secondary-text">👋 Available for work</span>
+          <span className="text-sm font-semibold text-secondary-text">
+            👋 Available for work
+          </span>
         </motion.div>
 
         <motion.h1
@@ -76,7 +84,11 @@ export default function Hero() {
           className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight mb-6 text-foreground leading-[1.1] max-w-full overflow-hidden whitespace-nowrap text-ellipsis px-2 sm:px-0"
         >
           {name.split("").map((char, index) => (
-            <motion.span key={index} variants={letterVariants} className="inline-block">
+            <motion.span
+              key={index}
+              variants={letterVariants}
+              className="inline-block"
+            >
               {char === " " ? "\u00A0" : char}
             </motion.span>
           ))}
@@ -93,7 +105,7 @@ export default function Hero() {
             <motion.span
               animate={{ opacity: [1, 0] }}
               transition={{ repeat: Infinity, duration: 0.8 }}
-              className="inline-block w-[3px] h-7 md:h-9 bg-accent ml-2"
+              className="inline-block w-0.75 h-7 md:h-9 bg-accent ml-2"
             />
           </h2>
         </motion.div>
@@ -123,7 +135,7 @@ export default function Hero() {
             href="#contact"
             className="px-8 py-4 rounded-full border-2 border-accent text-accent font-semibold hover:bg-accent hover:text-white dark:hover:text-background transition-colors flex items-center justify-center"
           >
-            Let's Talk
+            Let&apos;s Talk
           </a>
         </motion.div>
       </div>

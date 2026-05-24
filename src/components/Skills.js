@@ -27,8 +27,14 @@ export default function Skills() {
             variants={itemVariants}
             className="flex items-center gap-2 px-4 py-2.5 bg-card border border-border-color rounded-full cursor-default transition-all duration-300 hover:border-accent hover:scale-105 hover:shadow-[0_0_20px_rgba(124,154,126,0.3)]"
           >
-            <img src={skill.icon} alt={skill.name} className="w-5 h-5 object-contain" />
-            <span className="text-sm font-semibold text-secondary-text">{skill.name}</span>
+            <img
+              src={skill.icon}
+              alt={skill.name}
+              className="w-5 h-5 object-contain"
+            />
+            <span className="text-sm font-semibold text-secondary-text">
+              {skill.name}
+            </span>
           </motion.div>
         ))}
       </div>
@@ -46,12 +52,20 @@ export default function Skills() {
           className="flex flex-col gap-16 max-w-5xl mx-auto"
         >
           <div className="flex flex-col gap-4 text-center items-center">
-            <motion.div variants={itemVariants} className="flex items-center gap-3">
-              <div className="h-[1px] w-12 bg-accent/50" />
-              <span className="text-accent font-semibold tracking-wider uppercase text-sm">/ Skills & Tools</span>
-              <div className="h-[1px] w-12 bg-accent/50" />
+            <motion.div
+              variants={itemVariants}
+              className="flex items-center gap-3"
+            >
+              <div className="h-px w-12 bg-accent/50" />
+              <span className="text-accent font-semibold tracking-wider uppercase text-sm">
+                / Skills & Tools
+              </span>
+              <div className="h-px w-12 bg-accent/50" />
             </motion.div>
-            <motion.h2 variants={itemVariants} className="font-display text-4xl md:text-5xl text-foreground">
+            <motion.h2
+              variants={itemVariants}
+              className="font-display text-4xl md:text-5xl text-foreground"
+            >
               The tools I work with.
             </motion.h2>
           </div>

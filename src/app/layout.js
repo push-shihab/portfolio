@@ -17,8 +17,9 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata = {
-  title: "Your Name | Full Stack Developer",
-  description: "I craft clean, fast, and scalable web experiences that users love.",
+  title: "Shihab | Full Stack Developer",
+  description:
+    "I craft clean, fast, and scalable web experiences that users love.",
 };
 
 export default function RootLayout({ children }) {

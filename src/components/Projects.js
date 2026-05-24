@@ -29,8 +29,10 @@ export default function Projects() {
             viewport={{ once: true }}
             className="flex items-center gap-3"
           >
-            <span className="text-accent font-semibold tracking-wider uppercase text-sm">/ Featured Work</span>
-            <div className="h-[1px] w-12 bg-accent/50" />
+            <span className="text-accent font-semibold tracking-wider uppercase text-sm">
+              / Featured Work
+            </span>
+            <div className="h-px w-12 bg-accent/50" />
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -39,7 +41,7 @@ export default function Projects() {
             transition={{ delay: 0.1 }}
             className="font-display text-4xl md:text-5xl text-foreground"
           >
-            Things I've built.
+            Things I&apos;ve built.
           </motion.h2>
         </div>
 
@@ -61,23 +63,38 @@ export default function Projects() {
                   {project.id}
                 </span>
                 <div className="flex gap-4">
-                  <a href={project.githubLink} aria-label="GitHub Link" className="text-secondary-text hover:text-foreground transition-colors p-2 rounded-full hover:bg-background">
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    aria-label="GitHub Link"
+                    className="text-secondary-text hover:text-foreground transition-colors p-2 rounded-full hover:bg-background"
+                  >
                     <Github size={22} />
                   </a>
-                  <a href={project.demoLink} aria-label="Live Demo Link" className="text-secondary-text hover:text-foreground transition-colors p-2 rounded-full hover:bg-background">
+                  <a
+                    href={project.demoLink}
+                    target="_blank"
+                    aria-label="Live Demo Link"
+                    className="text-secondary-text hover:text-foreground transition-colors p-2 rounded-full hover:bg-background"
+                  >
                     <ExternalLink size={22} />
                   </a>
                 </div>
               </div>
-              
-              <h3 className="text-3xl font-display text-foreground mb-4">{project.title}</h3>
-              <p className="text-secondary-text leading-relaxed mb-8 flex-1 text-lg">
+
+              <h3 className="text-3xl font-display text-foreground mb-4">
+                {project.title}
+              </h3>
+              <p className="text-secondary-text leading-relaxed mb-8 flex-1 text-lg line-clamp-3">
                 {project.description}
               </p>
-              
+
               <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-border-color/50">
-                {project.tags.map(tag => (
-                  <span key={tag} className="text-xs font-semibold px-3 py-1.5 bg-background border border-border-color rounded-full text-foreground">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs font-semibold px-3 py-1.5 bg-background border border-border-color rounded-full text-foreground"
+                  >
                     {tag}
                   </span>
                 ))}
